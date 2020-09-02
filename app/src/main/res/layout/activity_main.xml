@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="iv.nakonechnyi.exchange.ConverterViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/offset16dp"
+        tools:context=".MainActivity">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/converted_value"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/offset16dp"
+            style="@style/Platform.MaterialComponents.Light"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true" />
+
+        <Spinner
+            android:id="@+id/from_currency"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/offset16dp"
+            android:layout_below="@id/converted_value"
+            android:layout_centerHorizontal="true" />
+
+        <Spinner
+            android:id="@+id/to_currency"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/offset16dp"
+            android:layout_below="@id/from_currency"
+            android:layout_centerHorizontal="true" />
+
+        <TextView
+            android:id="@+id/result"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/offset16dp"
+            android:textSize="16sp"
+            android:layout_below="@id/to_currency"
+            android:layout_centerHorizontal="true" />
+        
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_convert"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/offset16dp"
+            android:layout_below="@id/result"
+            android:layout_centerHorizontal="true"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_history"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/offset16dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"/>
+
+    </RelativeLayout>
+</layout>
