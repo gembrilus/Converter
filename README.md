@@ -2,11 +2,12 @@
 Exchange
 ========
 
-This app is a currency converter based on free API from [Amdoren][1]
+This app is a currency converter based on free API from [Amdoren][1].
+
 Exchange is written on Kotlin and used [Kotlin Coroutines][9]
 
 In app is used such libraries:
-[Room][2],[Retrofit][3], [OkHttp][4], [Moshi][5], [Dagger 2][6], [MVVM-pattern][7];
+[Data Binding][11], [Room][2],[Retrofit][3], [OkHttp][4], [Moshi][5], [Dagger 2][6], [MVVM-pattern][7];
 and libraries for unit-tests: [Mockito][8], Hamcrest, JUnit
 
 Download
@@ -35,3 +36,4 @@ MIT. See the [LICENSE][10] file for details.
 [8]: https://site.mockito.org/
 [9]: https://kotlinlang.org/docs/reference/coroutines/coroutines-guide.html
 [10]: https://github.com/gembrilus/Converter/blob/master/LICENSE
+[11]: https://developer.android.com/topic/libraries/data-binding
