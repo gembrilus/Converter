@@ -1,19 +1,16 @@
 package iv.nakonechnyi.exchange.di
 
 import android.content.Context
-import android.util.Log
 import com.chuckerteam.chucker.api.ChuckerInterceptor
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
-import dagger.Binds
 import dagger.Module
 import dagger.Provides
 import iv.nakonechnyi.exchange.BuildConfig
 import iv.nakonechnyi.exchange.clients.ApiClient
-import iv.nakonechnyi.exchange.clients.CurrencyConverter
 import iv.nakonechnyi.exchange.clients.FixerConverterClient
 import iv.nakonechnyi.exchange.clients.intrceptors.AuthInterceptor
-import iv.nakonechnyi.exchange.service.FixerConverterService
+import iv.nakonechnyi.exchange.db.CurrencyConverter
 import okhttp3.OkHttpClient
 import okhttp3.Protocol
 import retrofit2.Retrofit

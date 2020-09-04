@@ -1,9 +1,9 @@
 <resources>
     <string name="app_name">Exchange</string>
     <string name="hint_amount_of_money">Amount</string>
-    <string name="btn_text_history">History</string>
+    <string name="btn_text_history">Convert history</string>
     <string name="btn_text_convert">Convert</string>
-
+    <string name="item_holder_text" translatable="false">%d %s = %f %s</string>
 
     <string name="UAH">Hryvn\'a</string>
     <string name="USD">Dollar USA</string>

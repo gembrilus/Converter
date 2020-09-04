@@ -75,6 +75,7 @@
             android:text="@string/btn_text_history"
             style="@style/Widget.MaterialComponents.Button.OutlinedButton"
             android:layout_marginTop="@dimen/offset16dp"
+            android:onClick="@{()->viewModel.openHistoryFragment()}"
             android:layout_alignParentBottom="true" />
 
     </RelativeLayout>

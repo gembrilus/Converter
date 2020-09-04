@@ -1,16 +1,19 @@
 package iv.nakonechnyi.exchange.ui.fragments
 
 import android.os.Bundle
-import android.view.KeyEvent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.EditorInfo
 import android.widget.AdapterView
+import android.widget.ArrayAdapter
+import android.widget.Spinner
 import androidx.databinding.DataBindingUtil
+import com.google.android.material.textfield.TextInputEditText
 import iv.nakonechnyi.exchange.R
 import iv.nakonechnyi.exchange.databinding.FragmentMainBinding
 import iv.nakonechnyi.exchange.model.Currency
+import iv.nakonechnyi.exchange.utils.WrapperOnItemSelectedListener
 import kotlinx.android.synthetic.main.fragment_main.*
 
 class MainFragment : BaseFragment() {
@@ -19,21 +22,20 @@ class MainFragment : BaseFragment() {
         fun newInstance() = MainFragment()
     }
 
-    private val listener = object : AdapterView.OnItemSelectedListener {
-        override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) = update()
-        override fun onNothingSelected(parent: AdapterView<*>?) {}
+    private val listener by lazy { WrapperOnItemSelectedListener(this::update) }
+
+    private val spinnerAdapter by lazy {
+        ArrayAdapter(
+            requireContext(),
+            android.R.layout.simple_dropdown_item_1line,
+            Currency.values().map { getString(it.resIdName) })
     }
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? = DataBindingUtil.inflate<FragmentMainBinding>(
-        inflater,
-        R.layout.fragment_main,
-        container,
-        false
-    )
+    ): View? = DataBindingUtil.inflate<FragmentMainBinding>(inflater, R.layout.fragment_main, container,false)
         .apply {
             lifecycleOwner = this@MainFragment
             viewModel = model
@@ -43,27 +45,31 @@ class MainFragment : BaseFragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
-        amount.setOnEditorActionListener { _, actionId, _ ->
-            if (actionId == EditorInfo.IME_ACTION_DONE){
-                update()
-                true
-            } else {
-                false
-            }
-        }
-        from_currency.onItemSelectedListener = listener
-        to_currency.onItemSelectedListener = listener
-
-        btn_history.setOnClickListener {
-            model.openHistoryFragment()
-        }
+        setupEditText(amount)
+        setupSpinner(from_currency)
+        setupSpinner(to_currency)
 
     }
 
-    private fun update(){
+    private fun update() {
+        val amount = amount.text.toString().toInt()
+        if (amount == 0) return
         val from = Currency.values()[from_currency.selectedItemPosition]
         val to = Currency.values()[to_currency.selectedItemPosition]
-        val amount = amount.text.toString().toInt()
         model.convert(from, to, amount)
+    }
+
+    private fun setupSpinner(spinner: Spinner) = with(spinner) {
+        onItemSelectedListener = listener
+        adapter = spinnerAdapter
+    }
+
+    private fun setupEditText(v: TextInputEditText) = with(v) {
+        setOnEditorActionListener { _, actionId, _ ->
+            if (actionId == EditorInfo.IME_ACTION_DONE) {
+                update()
+                true
+            } else false
+        }
     }
 }

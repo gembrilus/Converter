@@ -29,7 +29,8 @@ class HistoryAdapter : RecyclerView.Adapter<HistoryAdapter.HistoryViewHolder>() 
 
     class HistoryViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         fun bind(op: ConvertOperation) {
-            itemView.item_holder.text = op.toString()
+            itemView.item_id.text = "${adapterPosition}"
+            itemView.item_holder.text = itemView.context.getString(R.string.item_holder_text, op.amount, op.from, op.result, op.to)
         }
     }
 }

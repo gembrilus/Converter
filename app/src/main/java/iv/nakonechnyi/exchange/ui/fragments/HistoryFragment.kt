@@ -15,9 +15,7 @@ class HistoryFragment : BaseFragment() {
         fun newInstance() = HistoryFragment()
     }
 
-    private val historyAdapter: HistoryAdapter by lazy {
-        HistoryAdapter()
-    }
+    private val historyAdapter by lazy { HistoryAdapter() }
 
     override fun onCreateView(
         inflater: LayoutInflater,

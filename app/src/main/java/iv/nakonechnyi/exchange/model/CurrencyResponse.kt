@@ -1,3 +1,9 @@
 package iv.nakonechnyi.exchange.model
 
-data class CurrencyResponse(val amount: Double = 0.0)
+import com.squareup.moshi.Json
+
+data class CurrencyResponse(
+    val error: Int?,
+    @Json(name ="error_message") val errorMessage: String?,
+    val amount: Double = 0.0
+)

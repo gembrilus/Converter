@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Exchange</string>
+    <string name="hint_amount_of_money">Сумма</string>
+    <string name="btn_text_history">История конвертаций</string>
+    <string name="btn_text_convert">Конвертировать</string>
+    <string name="UAH">Гривна</string>
+    <string name="USD">Доллар США</string>
+    <string name="EUR">Евро</string>
+    <string name="RUR">Росийский рубль</string>
+</resources>

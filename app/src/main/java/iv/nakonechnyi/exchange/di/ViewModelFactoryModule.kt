@@ -5,7 +5,7 @@ import androidx.lifecycle.ViewModelProvider
 import dagger.Binds
 import dagger.Module
 import dagger.multibindings.IntoMap
-import iv.nakonechnyi.exchange.annotations.ViewModelKey
+import iv.nakonechnyi.exchange.di.annotations.ViewModelKey
 import iv.nakonechnyi.exchange.ui.viewmodels.ConvertViewModelFactory
 import iv.nakonechnyi.exchange.ui.viewmodels.ConverterViewModel
 

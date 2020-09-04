@@ -9,7 +9,7 @@ interface HistoryDao {
     @Query("SELECT * FROM convert_history")
     suspend fun getAllRecords(): List<ConvertOperation>
 
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    @Insert(onConflict = OnConflictStrategy.ABORT)
     suspend fun saveOperation(operation: ConvertOperation): Long
 
     @Delete
