@@ -18,6 +18,14 @@ Download
 </p>
 
 
+Download (with enabled Chucker)
+-------------------------------
+
+<p align="center">
+  <img src="qr-debug.png" alt="OR-code image"/>
+</p>
+
+
 Author
 ------
 Maksim Nakonechnyi - @gembrilus on GitHub
