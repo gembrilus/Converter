@@ -5,7 +5,7 @@ import dagger.Module
 import dagger.android.AndroidInjector
 import dagger.multibindings.ClassKey
 import dagger.multibindings.IntoMap
-import iv.nakonechnyi.exchange.MainActivity
+import iv.nakonechnyi.exchange.ui.MainActivity
 
 @Module(subcomponents = [MainActivitySubComponent::class])
 abstract class MainActivityModule {

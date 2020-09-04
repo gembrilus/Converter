@@ -17,7 +17,8 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
-        buildConfigField "String", "FIXER_API_URL", '"https://fixer-fixer-currency-v1.p.rapidapi.com/"'
+        buildConfigField "String", "FIXER_API_URL", '"https://www.amdoren.com/api/"'
+        buildConfigField "String", "ACCESS_KEY", '"Xs34AbUhanjxCfKFvEKbRXWgRDaEwp"'
     }
 
     repositories {
@@ -78,6 +79,10 @@ dependencies {
     implementation "com.squareup.moshi:moshi-kotlin:1.9.2"
     kapt "com.squareup.moshi:moshi-kotlin-codegen:1.9.2"
     implementation "com.squareup.moshi:moshi-adapters:1.9.2"
+
+    //Chucker
+    debugImplementation "com.github.ChuckerTeam.Chucker:library:3.0.1"
+    releaseImplementation "com.github.ChuckerTeam.Chucker:library-no-op:3.0.1"
 
     //Room
     implementation "androidx.room:room-ktx:2.2.5"

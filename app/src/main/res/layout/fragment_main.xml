@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="iv.nakonechnyi.exchange.ui.viewmodels.ConverterViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/container_amount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/offset16dp"
+            android:layout_marginStart="@dimen/offset16dp"
+            android:layout_marginEnd="@dimen/offset16dp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_alignParentTop="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/amount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/hint_amount_of_money"
+                android:text="@{String.valueOf(0)}"
+                android:imeOptions="actionDone"
+                android:inputType="number" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Spinner
+            android:id="@+id/from_currency"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/offset16dp"
+            android:layout_marginStart="@dimen/offset16dp"
+            android:layout_marginEnd="@dimen/offset16dp"
+            android:entries="@array/currency"
+            style="@style/Widget.AppCompat.Spinner.Underlined"
+            android:layout_below="@id/container_amount" />
+
+        <Spinner
+            android:id="@+id/to_currency"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/offset16dp"
+            android:layout_marginStart="@dimen/offset16dp"
+            android:layout_marginEnd="@dimen/offset16dp"
+            android:entries="@array/currency"
+            style="@style/Widget.AppCompat.Spinner.Underlined"
+            android:layout_below="@id/from_currency" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/result"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:textSize="@dimen/text16sp"
+            android:inputType="numberDecimal"
+            android:text="@{String.valueOf(viewModel.result)}"
+            style="@style/Widget.MaterialComponents.TextView"
+            android:layout_marginTop="@dimen/offset16dp"
+            android:layout_marginStart="@dimen/offset16dp"
+            android:layout_marginEnd="@dimen/offset16dp"
+            android:layout_below="@id/to_currency" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_history"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/btn_text_history"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_marginTop="@dimen/offset16dp"
+            android:layout_alignParentBottom="true" />
+
+    </RelativeLayout>
+</layout>

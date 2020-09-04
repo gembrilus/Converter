@@ -8,7 +8,7 @@ import iv.nakonechnyi.exchange.di.DaggerConverterAppComponent
 import javax.inject.Inject
 
 
-class ConverterApp: Application(), HasAndroidInjector {
+class ConverterApp : Application(), HasAndroidInjector {
 
     @Inject
     lateinit var dispatchingAndroidInjector: DispatchingAndroidInjector<Any>

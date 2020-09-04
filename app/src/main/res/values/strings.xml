@@ -1,7 +1,19 @@
 <resources>
     <string name="app_name">Exchange</string>
+    <string name="hint_amount_of_money">Amount</string>
+    <string name="btn_text_history">History</string>
+    <string name="btn_text_convert">Convert</string>
+
+
     <string name="UAH">Hryvn\'a</string>
     <string name="USD">Dollar USA</string>
     <string name="EUR">Euro</string>
     <string name="RUR">Rub</string>
+    <string-array name="currency">
+        <item>@string/UAH</item>
+        <item>@string/USD</item>
+        <item>@string/EUR</item>
+        <item>@string/RUR</item>
+    </string-array>
+
 </resources>
